@@ -1,13 +1,12 @@
 import streamlit as st
 import os
 
-st.title("🧬 AMR Test")
+st.title("AMR App Diagnostic")
 
-# Check if model file exists
 if os.path.exists('comprehensive_amr_models.pkl'):
-    file_size = os.path.getsize('comprehensive_amr_models.pkl') / (1024 * 1024)
-    st.success(f"✅ Model file found! Size: {file_size:.1f} MB")
+    st.success("Found comprehensive_amr_models.pkl!")
+    st.write(f"Size: {os.path.getsize('comprehensive_amr_models.pkl') / (1024*1024):.1f} MB")
 else:
-    st.error("❌ Model file NOT found!")
+    st.error("comprehensive_amr_models.pkl NOT FOUND in deployment.")
 
-st.write("If you see this, the app is working!")
+st.write("If you see this message (even without the model), the app runs. If it just hangs, Cloud can't see your model file!")
