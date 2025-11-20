@@ -3,3 +3,4 @@ biopython
 pandas
 scikit-learn
 numpy
+requests
